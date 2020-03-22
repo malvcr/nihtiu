@@ -60,6 +60,8 @@ This type of systems can't be designed for complex built scenarios as, in many c
 
 This is why an Arduino or a Raspberry Pi are being discussed and not more complex control machines.  However, the software by itself could be complex, just that the software setup must be extremely easy to accomplish, as the people involved with the immediate patient treatment need the machines working quickly and have no time to read manuals.
 
+# Related projects
 
+[Code Live Ventilator Challenge](https://www.agorize.com/en/challenges/code-life-challenge)
 
-
+[https://opensource.com/article/20/3/open-hardware-covid19](7 open hardware projects working to solve COVID-19)
