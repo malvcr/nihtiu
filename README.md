@@ -13,6 +13,8 @@ There are several alternatives to work the problems:
 
 # A Botta System
 
+## General description
+
 Botta describes a system whose control could be performed by Arduino or Raspberry Pi machines.
 
 There is the main issue the machine must accomplish, although there seem to be more related problems.
@@ -36,8 +38,18 @@ A possible solution is to use both, an Arduino and a Raspberry Pi or similar mac
 
 All the data visualization could be done with HTTP5 logic.  A first version can be done with PHP or similar type of language, while the Arduino logic be encoded with carefully written C++ code (medical level quality).
 
-
 This setup advantage is that the complexity can be limited to the particular scenario and that, in the case the networed environment fails, the Arduino machine can continue working as such embedded systems can work in isolation from the other computing elements.  This, together with some "emergency" setup for immediate usage.
+
+## Transactional based
+
+Although there are and will be attempts to create these systems as pure embedded ones, it seems better to work them as transactional based machines.
+
+These, together with a standardized basic protocol could permit to "match" different independent attempts.  Some could work a better ventilator or similar, but other a better control system.  Some place could work with a Raspberry Pi but another one maybe have some spare old PCs that could be useful for that purpose.
+
+Even a equipment company could work the "difficult to make" parts but in quantity, letting the control area to other company or individuals.
+
+All them sending transactions on WIFI to the particular machines.  A control system could work with one ventilator while another could manage one thousand.
+
 
 # Why retrofiting equipment?
 
@@ -47,7 +59,7 @@ Existing machines that are no longer into production could be reassembled and, w
 
 Also, they have "complex" parts that can be used to create a Botta System.
 
-# Part addaptation
+# Part adaptation
 
 In this case, the system could use some already created parts, even replacement parts created to specific medical equipment.
 
@@ -65,3 +77,5 @@ This is why an Arduino or a Raspberry Pi are being discussed and not more comple
 [Code Live Ventilator Challenge](https://www.agorize.com/en/challenges/code-life-challenge)
 
 [7 open hardware projects working to solve COVID-19](https://opensource.com/article/20/3/open-hardware-covid19)
+
+[IFIXIT: Help us crowdsource repair information for medical equipment](https://www.ifixit.com/News/36354/help-us-crowdsource-repair-information-for-Hospital-Equipment)
