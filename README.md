@@ -64,4 +64,4 @@ This is why an Arduino or a Raspberry Pi are being discussed and not more comple
 
 [Code Live Ventilator Challenge](https://www.agorize.com/en/challenges/code-life-challenge)
 
-[https://opensource.com/article/20/3/open-hardware-covid19](7 open hardware projects working to solve COVID-19)
+[7 open hardware projects working to solve COVID-19](https://opensource.com/article/20/3/open-hardware-covid19)
