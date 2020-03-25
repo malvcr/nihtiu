@@ -32,9 +32,9 @@ Oh the other side, it is easier to create hardware and sensor control logic usin
 
 A possible solution is to use both, an Arduino and a Raspberry Pi or similar machine connected through a USB cable.
 
-* The Arduino (could be more than one) taking care of the physical logic, controlling the hardware and collecting the data from the sensors.
-* The SBC as the logical immediate center, acquiring the data from the Arduino, including more complex reaction logic and with the security and networking behavior.
-* A central (with backup) system that permit to monitor each and all machines and that communicate directly with all the Raspberry Pi machines using some private WIFI network.
+* The Arduino, ESP32 or similar device is the real heart of the system.  It has the machine logic, parameters, profiles, receives data from the sensors and manages the moving parts.
+* The SBC is the "Access Server", providing user interfacing, alarms and local telemetry data storage.
+* An analysis and backup system "could" (optionally) connect with the SBC to collect the working information to perform several types of analysis on the systems.  That connection could be performed wired or wirelessly as it is not critical fot the machine behaviour.
 
 All the data visualization could be done with HTTP5 logic.  A first version can be done with PHP or similar type of language, while the Arduino logic be encoded with carefully written C++ code (medical level quality).
 
