@@ -48,8 +48,9 @@ These, together with a standardized basic protocol could permit to "match" diffe
 
 Even a equipment company could work the "difficult to make" parts but in quantity, letting the control area to other company or individuals.
 
-All them sending transactions on WIFI to the particular machines.  A control system could work with one ventilator while another could manage one thousand.
+All them sending transactions through network to the particular machines.  A control system could work with one ventilator while another could manage one thousand.
 
+*Note: WIFI was initially considered for the control network; however, concerns about wireless technology reliability is making this a secondary control channel, letting the main one as a pure wire connected one.  Anyway, always will be possible to link a SBC with an Ethernet port AND a WIFI link.  This is the main reason to have a mixed environment (Arduino+SBC), as the SBC can provide extra flexibility methods lething to the Arduino the precise hard work to keep the patient alive.*
 
 # Why retrofiting equipment?
 
@@ -62,7 +63,6 @@ Also, they have "complex" parts that can be used to create a Botta System.
 # Part adaptation
 
 In this case, the system could use some already created parts, even replacement parts created to specific medical equipment.
-
 
 In all these cases the challenge is how to obtain a minimum usable working machine, not a full fleated deluxe system (this is a WAR ZONE where many characteristics must be avoided).
 
@@ -82,6 +82,6 @@ This is why an Arduino or a Raspberry Pi are being discussed and not more comple
 
 [OXYGEN](https://www.oxygen.protofy.xyz/)
 
-[Respiradores de emergencia para pacientes de Covid 19 podrían ser de fácil construcción](https://www.ucr.ac.cr/noticias/2020/03/25/respiradores-de-emergencia-para-pacientes-de-covid-19-podrian-ser-de-facil-construccion.html)
+[UCR:Respiradores de emergencia para pacientes de Covid 19 podrían ser de fácil construcción](https://www.ucr.ac.cr/noticias/2020/03/25/respiradores-de-emergencia-para-pacientes-de-covid-19-podrian-ser-de-facil-construccion.html)
 
-
+[TEC trabaja en la creación de respiradores artificiales](https://delfino.cr/2020/03/tec-trabaja-en-la-creacion-de-respiradores-artificiales)
