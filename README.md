@@ -79,3 +79,9 @@ This is why an Arduino or a Raspberry Pi are being discussed and not more comple
 [7 open hardware projects working to solve COVID-19](https://opensource.com/article/20/3/open-hardware-covid19)
 
 [IFIXIT: Help us crowdsource repair information for medical equipment](https://www.ifixit.com/News/36354/help-us-crowdsource-repair-information-for-Hospital-Equipment)
+
+[OXYGEN](https://www.oxygen.protofy.xyz/)
+
+[Respiradores de emergencia para pacientes de Covid 19 podrían ser de fácil construcción](https://www.ucr.ac.cr/noticias/2020/03/25/respiradores-de-emergencia-para-pacientes-de-covid-19-podrian-ser-de-facil-construccion.html)
+
+
