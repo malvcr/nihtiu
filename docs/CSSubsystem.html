@@ -1,0 +1,115 @@
+<html>
+  <head></head>
+  <body>
+    <h1>Critical SubSystem (CS)</h1>
+    <p>
+      The CS is being worked to run using an Arduino Mega type of 
+      microcontroller system.
+    </p>
+    <p>
+      <i>Could run in other Arduino type of machines, but that is not
+         being tested in the main project.
+      </i>
+    </p>
+    
+    <p>
+      What this machine do is to produce <b><i>breathing cycles</i></b>, that
+      are a medium to send air to a patient and to release that air in
+      a controlled way.  So, there are many different events but they
+      can't appear in the middle of any of these cycles (each cycle must
+      finish according with the information the machine had before that
+      cycle began).  The only exception is the "Hold" event, that stop
+      the machine "before" the release internal operation is performed.
+    </p>
+    
+    <p>
+      As an Arduino system, it has been organized in the following 
+      elements:
+      <ul>
+        <li><b>Actions:</b> : transactions performed on the system.
+        <li><b>Modes:</b> : <i><b>ventilator modes</b></i>, basically the different types of working algorithms.
+        <li><b>Sensors:</b> the elements that collect data.
+        <li><b>Actuators:</b> the elements that perform actions.
+      </ul>
+    </p>
+    <p>
+      Together with a "shared" data structure known as its "context"
+    </p>
+    <p>
+      The <b>actions</b> are independent functions stored in a vector that
+      are located by an index ( O(1) speed ).  The current defined actions
+      are:
+      <ul>
+        <li><b>Continue</b>: work the next breath cycle.
+        <li><b>ChangeBehaviour</b>: modifies one of the working parameters.
+        <li><b>GetData</b>: obtain some setting or realtime data.
+        <li><b>Reset</b>: return to the last "standard" working profile.
+        <li><b>SetMode</b>: defines what will be the mode for the next breathing cycle.
+        <li><b>StoreProfile</b>: creates a new profile and stores it in the Arduino EEPROM.
+        <li><b>SetProfile</b>: loads and applies a previously stored profile.
+        <li><b>Hold</b>: stops the machine until the hold line is cleared.
+      </ul>
+    </p>
+    <p>
+      These instructions to perform the actions are received on the Serial Arduino line 
+      from the AC (typically a Single Board Computer) connected through a USB cable.
+    </p>
+    <p>
+      The <b>modes</b> are the methodologies or algorithms the machine follow to achieve
+      its goals.  They are corresponding to formal medical ventilator modes: 
+      <ul>
+        <li><b>ACV:</b> Assist-Control Ventilation
+        <li><b>SIMV:</b> Synchronized Intermittent-Mandatory Ventilation
+        <li><b>PCV:</b> Pressure-Controlled Ventilation
+        <li><b>PSV:</b> Pressure Support Ventilation
+        <li><b>PCIRV:</b> Pressure Controlled Inverse Ration Ventilation
+        <li><b>APRV:</b> Airway Pressure Release Ventilation
+        <li><b>PRVC:</b> Pressure Regulated Volume Control
+        <li><b>PAV:</b> Proportional Assist Ventilation
+      </ul>
+    </p>
+    <p>
+      Take into consideration that not all these modes will be ready now, as this is a
+      "work in progress".
+    </p>
+    <p>
+      The <b>sensors</b> collect certain runtime data and events.  Here we have:
+      <ul>
+        <li><b>Pressure Sensor:</b> Checks the current air pressure
+        <li><b>Flow Sensor:</b> Checks the currently delivered air volume
+        <li><b>Hold Button:</b> Identifies if a "hold" operation was requested locally
+        <li><b>Reset Button:</b> Identifies if a "reset" operation was requested locally
+      </ul>
+    </p>
+    <p>
+      The <b>actuators</b> are the ones performing the physical actions.  We have:
+      <ul>
+        <li><b>BigValveMask:</b> The bubble is used to accumulate and send air to the patient.
+        <li><b>Alarm:</b> The mechanism used to advice the medical personal on particular
+            warnings or emergencies.
+      </ul>
+    </p>
+    
+    <p>
+      Possibly, the BigValveMask be one of these:
+    </p>
+      <center>
+        <img src="images/Bag_valve_mask_2.jpg" width="200px"/>
+      </center>
+    <p>
+      And what the actuator do is to press and release the bag in a controlled period
+      of time and pause following different possible methods.  This is why Nihtui is not
+      limited to any of them; who uses this control system must add the particular
+      programming that controls how the bag is pressed and released.
+    </p>
+    <p>
+      An option is to use a step-motor with a strap, as the original 
+      <a href="https://docs.google.com/document/d/1FNPwrQjB1qW1330s5-S_-VB0vDHajMWKieJRjINCNeE/preview?fbclid=IwAR3ugu1SGMsacwKi6ycAKJFOMduInSO4WVM8rgmC4CgMJY6cKaGBNR14mpM">Botta</a>
+      document
+      describes.  A different one is following the Spanish <a href="https://www.oxygen.protofy.xyz/">Oxygen</a> project suggestion, using
+      some paddle that press the bag.  In any case, the idea is to use all the data the
+      controller offers to define how to use these physical elements to perform the
+      specified task.
+    </p>
+  </body>
+</html>

@@ -1,0 +1,69 @@
+<html>
+  <head>
+  </head>
+
+  <body>
+    <h1>Nihtiu Architecture</h1>
+    <p>
+      Nihtiu purpose is to control a ventilator type of medical equipment.
+    </p>
+    <center>
+      <img src="images/NIHTIU_Architecture.png" width="100%"/>
+    </center>
+    <p>
+      For this control, Nihtui is defined as a three-level computing system:
+      <ul>
+        <li>Critical SubSystem (CS)</li>
+        <li>Access SubSystem (AS)</li>
+        <li>Processing SubSystem (PS)</li>
+      </ul>
+    </p>
+    <h2>Critical SubSystem (CS)</h2>
+    <p>
+      The <a href="CSSubsystem.html">CS</a> is hosted in an Arduino based Microcontroled computing machine.
+    </p>
+    <p>
+      This machine:
+      <ul>
+        <li>Executes all the critical procedures that keep the machine
+            working without interruption.
+        </li>
+        <li>Query sensors and other physical devices that provide the
+            needed information for the machine to work and to react to
+            certain irregular events.
+        </li>
+        <li>Moves the physical parts that provide the artificial breathing
+            to the patient.
+        </li>
+      </ul>
+    </p>
+    <h2>Access SubSystem (AS)</h2>
+    <p>
+      This machine:
+      <ul>
+        <li>offers the user interface for the medical professional to check 
+            and to control the system.
+        </li>
+        <li>collects telemetry information about operations and real time 
+            data concerning to the patient the machine is helping to breath.
+        </li>
+        <li>offers an external API for other systems to obtain the telemetry
+            data and to send remote commands to the system.
+        </li>
+      </ul>   
+    </p>
+    <h2>Processing SubSystem (PS)</h2>
+    <p>
+      This machine:
+      <ul>
+        <li>Acquires the data from one or more AS devices and process
+            it to perform several -non-critical- functions.
+        </li>
+        <li>Could be used to send commands to the AS devices, for them
+            to communicate orderly with their corresponding CS ones to
+            perform specific tasks.
+        </li>
+      </ul>
+    </p>
+  </body>
+</html>
