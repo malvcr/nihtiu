@@ -28,50 +28,50 @@ namespace Action {
 
 namespace Nihtiu {
 
-    enum class ParamType : byte {
-      
-        InspiratoryFlowTime         =  0, // setting
-        InspiratoryPause            =  1, // setting
-        ExpiratoryFlowTime          =  2, // setting
-        ExpiratoryPause             =  3, // setting
-        InLinePresureGoal           =  4, // setting
-        InLineFlowGoal              =  5, // setting
-        
-        InLinePresure               =  6, // realtime
-        InLineFlow                  =  7, // realtime
-        
-        ExhalationBlockerActivation =  8, // flag
-        ManualInspiratoryHold       =  9, // flag
-        HighPressureThreshold       = 10, // operational limit -> alarm
-        LowPressureThreshold        = 11,  // operational limit -> alarm
-
-        HoldTime                    = 12,
-        BVMTestSpeed                = 13,
-        BVMPressure                 = 14
-    }; 
+    using SettingType = byte;
     
+    namespace _SettingType {
+
+        const SettingType InspiratoryFlowTime         =  0;
+        const SettingType InspiratoryPause            =  1;
+        const SettingType ExpiratoryFlowTime          =  2;
+        const SettingType ExpiratoryPause             =  3;
+        const SettingType InLinePresureGoal           =  4;
+        const SettingType InLineFlowGoal              =  5;
+        
+        const SettingType HighPressureThreshold       =  6; // setting : operational limit -> alarm
+        const SettingType LowPressureThreshold        =  7; // setting : operational limit -> alarm
+
+        const SettingType HoldTime                    =  8;
+        const SettingType BVMTestSpeed                =  9;
+        const SettingType BVMPressure                 = 10;
+
+        const SettingType _MaxType                    = 11;
+
+    } // _SettingType namespace
+
+    using Settings = unsigned long[_SettingType::_MaxType];
+
+/*
+ * Previously SettngType was a combined enumeration class including real time and flat elements.
+ * 
+ * That made things more complicated.  So the settings now are really fixed values that can be modified
+ * by actions, but the other real-time elements must be controlled in a different way (this is not yet
+ * finished).
+ * 
+    enum class ParamType : byte {
+
+        InLinePresure               = 11, // realtime
+        InLineFlow                  = 12, // realtime
+        
+        ExhalationBlockerActivation = 13, // flag
+    }; 
+*/    
     enum class Problem : char{
         None      = 'N',
         Warning   = 'W',
         Emergency = 'E'
     };
-
-    struct Settings {
-        unsigned long aInspiratoryFlowTime = 0; 
-        unsigned long aInspiratoryPause    = 0;
-        unsigned long aExpiratoryFlowTime  = 0;
-        unsigned long aExpiratoryPause     = 0;
-        // T-INFL + PS-INSP + TM-EXFL + PS-EXPP = 1 Cycle
-        unsigned long aInLinePresureGoal; 
-        unsigned long aInLineFlowGoal;  
-        unsigned long aHighPressureThreshold;
-        unsigned long aLowPressureThreshold;
-        unsigned long aHoldTime = 1000; // microseconds
-
-        unsigned long aBVMTestSpeed = 0;
-        unsigned long aBVMPressure  = 0;
-        
-    }; // Settings class
 
     struct RealTime {
       

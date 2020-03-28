@@ -25,9 +25,8 @@ namespace Action {
         const ID SetMode         = 4;
         const ID StoreProfile    = 5;
         const ID SetProfile      = 6;
-        const ID Hold            = 7;
 
-        const ID _MaxAction      = 8;
+        const ID _MaxAction      = 7;
         
     } // _ID namespace
 
@@ -37,34 +36,29 @@ namespace Action {
         /**
          * Sets the machine working mode
          */
-        Text& setMode     (Nihtiu::Context& pContext, Nihtiu::ParamType pParamType, Text& pParamValue);
-        Text& storeProfile(Nihtiu::Context& pContext, Nihtiu::ParamType pParamType, Text& pParamValue);
-        Text& setProfile  (Nihtiu::Context& pContext, Nihtiu::ParamType pParamType, Text& pParamValue);
+        Text& setMode     (Nihtiu::Context& pContext, Nihtiu::SettingType pSettingType, Text& pParamValue);
+        Text& storeProfile(Nihtiu::Context& pContext, Nihtiu::SettingType pSettingType, Text& pParamValue);
+        Text& setProfile  (Nihtiu::Context& pContext, Nihtiu::SettingType pSettingType, Text& pParamValue);
 
         /**
          * Changes the specified parameter value, that will have some impact in how the 
          * machine works.
          */
-        Text& changeBehaviour(Nihtiu::Context& pContext, Nihtiu::ParamType pParamType, Text& pParamValue);
+        Text& changeBehaviour(Nihtiu::Context& pContext, Nihtiu::SettingType pSettingType, Text& pParamValue);
 
         /**
          * Obtain the current value for a specified parameter
          */
-        Text& getData        (Nihtiu::Context& pContext, Nihtiu::ParamType pParamType, Text& pParamValue);
+        Text& getData        (Nihtiu::Context& pContext, Nihtiu::SettingType pSettingType, Text& pParamValue);
 
         /**
          * Return the machine to the standard behaviour
          */
-        Text& reset          (Nihtiu::Context& pContext, Nihtiu::ParamType pParamType, Text& pParamValue);
+        Text& reset          (Nihtiu::Context& pContext, Nihtiu::SettingType pSettingType, Text& pParamValue);
 
-        /**
-         * Wait "some time" before continuing with the next breath cycle.
-         */
-        Text& hold           (Nihtiu::Context& pContext, Nihtiu::ParamType pParamType, Text& pParamValue);
-        
     } // OP namespace
 
-    using _OP = Text& (*)(Nihtiu::Context& pContext, Nihtiu::ParamType pParamType, Text& pParamValue);
+    using _OP = Text& (*)(Nihtiu::Context& pContext, Nihtiu::SettingType pSettingType, Text& pParamValue);
 
     class Manager {
         _OP aData[_ID::_MaxAction]; PROGMEM;

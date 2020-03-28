@@ -24,7 +24,7 @@ namespace Nihtiu {
         
     protected:
 
-        bool discoverAction(Action::ID& pActionID, ParamType& pParamType, Text& pParamValue);
+        bool discoverAction(Action::ID& pActionID, SettingType& pSettingType, Text& pParamValue);
 
         /**
          * Indicates if the reset line is active (and cleans it for further checing).

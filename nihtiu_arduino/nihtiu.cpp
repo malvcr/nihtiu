@@ -19,7 +19,7 @@ namespace Nihtiu {
     App::~App() {
     } // App destructor
 
-    bool App::discoverAction(Action::ID& pActionID, ParamType& pParamType, Text& pParamValue) {
+    bool App::discoverAction(Action::ID& pActionID, SettingType& pSettingType, Text& pParamValue) {
         // read the Serial line from the USB connected PC and parse it
         // on an Action and some Parameters.
         return false;
@@ -37,11 +37,11 @@ namespace Nihtiu {
   
         Action::ID vActionID = Action::_ID::Continue;
     
-        ParamType vParamType;
-        Text      vParamValue;
+        SettingType vSettingType;
+        Text        vParamValue;
   
         if (Serial.available()) {
-            discoverAction(vActionID,vParamType,vParamValue);
+            discoverAction(vActionID,vSettingType,vParamValue);
         }
         else if (flag_resetted()) {
             vActionID = Action::_ID::Reset;
@@ -52,7 +52,7 @@ namespace Nihtiu {
         }
         else {
             // O(1) execution 
-            Serial.print(aActionsManager[vActionID](aContext,vParamType,vParamValue));
+            Serial.print(aActionsManager[vActionID](aContext,vSettingType,vParamValue));
         }
         Serial.flush();
       

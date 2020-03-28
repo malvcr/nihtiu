@@ -43,7 +43,7 @@ namespace Mode {
 
         bool vHoldPressed = false;
         while (!pContext.aSensors.ctrlHoldActive()) {
-            delay (pContext.aSettings.aHoldTime); 
+            delay (pContext.aSettings[Nihtiu::_SettingType::HoldTime]); 
             vHoldPressed = true; // manual bypass so the expiration time will be avoided
         }
 
@@ -79,12 +79,12 @@ namespace Mode {
             pContext.aActuators.aBVMController.breath(vBreathSpeed,vBreathVolume);
 
             if (!Check_Hold(pContext)) {
-                delay(pContext.aSettings.aInspiratoryPause);
+                delay(pContext.aSettings[Nihtiu::_SettingType::InspiratoryPause]);
             }
             
             pContext.aActuators.aBVMController.exhaust(vExhaustSpeed);
             
-            delay(pContext.aSettings.aExpiratoryPause);
+            delay(pContext.aSettings[Nihtiu::_SettingType::ExpiratoryPause]);
         }
         
     } // OP::volume_ACV
