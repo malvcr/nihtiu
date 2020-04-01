@@ -23,18 +23,18 @@ namespace Actuators {
         void setup(unsigned int pTestSpeed, unsigned int pPressure, unsigned int pBagVolume);
 
         /**
-         * @param pSpeed how many microseconds will be used to perform the inflation
+         * @param pPressingTime  how many microseconds will be used to perform the inflation
          * @param pVolume quantity of air will be delivered in the specified time
          */
-        void breath(unsigned int pSpeed, unsigned int pVolume);
+        void breath(unsigned int pPressingTime, unsigned int pVolume);
 
         /**
-         * @param pMaxSpeed the maximum speed the air will be freed.
+         * @param pRecoverTime  the time to let the BVM to recover its size.
          * 
          * This is the "maximum" speed, because the BVM has a natural limit when the presure
          * is released on it.  It is not possible to go faster than that.
          */
-        void exhaust(unsigned int pMaxSpeed);
+        void exhaust(unsigned int pRecoverTime);
       
     }; // BagValveMask class
 

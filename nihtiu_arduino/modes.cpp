@@ -51,40 +51,79 @@ namespace Mode {
       
     } // Check_Hold
 
+    void Eval_Triggered(Nihtiu::Context& pContext, unsigned long pTimeout, bool pCheckBreath) {
+
+        bool vTriggered = false;
+
+        while (!vTriggered) {
+            Update_Sensors(pContext);
+
+            if (pCheckBreath) {
+                if (pContext.aSensors.breathDetected()) {
+                    vTriggered = true;
+                }              
+            }
+            if (!vTriggered) {
+                // maximum breath time has passed ... let's force a new breath cycle
+                if (pContext.aRealTime.elapsedTime() > pTimeout) {
+                    vTriggered = true;
+                }
+            }
+            if (!vTriggered) {
+                delay(10); // check 100 times in a second
+            }
+        }
+      
+      
+    } // Eval_Triggered
+    
+
+    // https://www.openanesthesia.org/modes_of_mechanical_ventilation/
+    
     
     // ==============
+    // Assist-Control Ventilation (ACV)
+    // Continouos mandatory ventilation (CMV)
+    // Trigger:  exhaust time pass or patient attempt a breath
+    // Limit  :  
+    // Cycle  :
+    
 
     void OP::volume_ACV     (Nihtiu::Context& pContext) {   // Assist-Control Ventilation
 
-       // WORK IN PROGRESS ... 
-       // This mode is not yet finished ... lack the patient intervention ...
-       //
-       
-        Update_Sensors(pContext);
-
+        // WORK IN PROGRESS ... 
+        // This mode is not yet finished ... lack what to do when problems are detected...
+        //
         // First check problems
         Nihtiu::Problem vProblem = Check_Problems(pContext);
 
-        // the vProblem variable must be taken into consideration in the algorithm
+        // In this case, the timeout is the ExpiratoryPause (the cycle will continue if the patient
+        // have no initiative to perform a breath).
         //
-
+        Eval_Triggered(pContext,pContext.aSettings[Nihtiu::_SettingType::ExpiratoryPause],true);
         {
-            // Calculate these parameters according with the last setup settings and
-            // realtime data
+            // The machine will send the InLineFlowGoal quantity of air in the InspiratoryFlowTime quantity
+            // of microseconds
             //
-            unsigned long vBreathSpeed  = 0; // calculate it
-            unsigned long vExhaustSpeed = 0; // calculate it
-            unsigned long vBreathVolume = 0; // calculate it
+            pContext.aActuators.aBVMController.breath(
+                pContext.aSettings[Nihtiu::_SettingType::InspiratoryFlowTime],
+                pContext.aSettings[Nihtiu::_SettingType::InLineFlowGoal]
+            );
 
-            pContext.aActuators.aBVMController.breath(vBreathSpeed,vBreathVolume);
-
+            // Then will wait if the hold button have not been pressed (otherwise it will only wait for the
+            // hold button to be released).
+            //
             if (!Check_Hold(pContext)) {
                 delay(pContext.aSettings[Nihtiu::_SettingType::InspiratoryPause]);
             }
-            
-            pContext.aActuators.aBVMController.exhaust(vExhaustSpeed);
-            
-            delay(pContext.aSettings[Nihtiu::_SettingType::ExpiratoryPause]);
+
+            // And will let the bag to return to its natural size in the ExpiratoryFlowTime of microseconds.
+            //
+            pContext.aActuators.aBVMController.exhaust(pContext.aSettings[Nihtiu::_SettingType::ExpiratoryFlowTime]);
+
+            // The time counter must be updated for the "Eval_Triggered" method to work correctly.
+            //
+            pContext.aRealTime.updateFinishedTime();
         }
         
     } // OP::volume_ACV

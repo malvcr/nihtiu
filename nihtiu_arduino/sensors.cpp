@@ -41,6 +41,18 @@ namespace Sensors {
         return (1 == vRawData);
       
     } // Devices::readCtrlSignal
+
+
+    bool Devices::breathDetected() {
+
+        // We have flow and pressure sensors
+        // ... what is the right way to dettect a breath?
+        // Maybe each physical devices have different thresholds .. check them
+        //    carefully
+
+        return (readPressureSensor() > 0);
+      
+    } // Devices::breathDetected
     
   
 } // Sensors namespace

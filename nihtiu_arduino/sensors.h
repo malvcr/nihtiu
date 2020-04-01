@@ -33,6 +33,8 @@ namespace Sensors {
         bool ctrlResetActive() {
             return readCtrlSignal(CTRL_RESET_DIGITAL_PIN);
         }
+
+        bool breathDetected();
       
     }; // Devices class
   

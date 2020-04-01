@@ -76,12 +76,21 @@ namespace Nihtiu {
     struct RealTime {
       
         unsigned long aInLinePresure;    
-        unsigned long aInLineFlow;        
-        bool          aExhalationBlockerActive;
+        unsigned long aInLineFlow; 
+        unsigned long aLastFinishedTime = millis();       
         ShortText     aLastProfile;
 
         Problem       aTriggeredProblem = Problem::None;
         Text          aProblemDesc;
+
+        unsigned long elapsedTime() {
+            // about "millis rollover" issue : https://forum.arduino.cc/index.php/topic,42997.0.html
+            return millis() - aLastFinishedTime;
+        }
+        void updateFinishedTime() {
+            aLastFinishedTime = millis();
+        }
+        
         
     }; // RealTime struct
 
@@ -94,6 +103,13 @@ namespace Nihtiu {
         Settings           aSettings;
         Actuators::Devices aActuators;
         Sensors::Devices   aSensors;
+
+        unsigned long cycleTime() {
+            return aSettings[_SettingType::InspiratoryFlowTime]+
+                   aSettings[_SettingType::InspiratoryPause]+
+                   aSettings[_SettingType::ExpiratoryFlowTime]+
+                   aSettings[_SettingType::ExpiratoryPause];
+        }
         
     }; // Context class
 
