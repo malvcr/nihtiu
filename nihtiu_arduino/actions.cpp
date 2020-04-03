@@ -20,10 +20,10 @@ namespace Action {
         
         pDestValue = strtoul(pSourceValue,&vEndPtr,10);
         if ('\0' == vEndPtr[0]) {
-            sprintf(pContext.aLastResult,"OK|%d|%d|\0",pContext.aRealTime.aInLinePresure,pContext.aRealTime.aInLineFlow);
+            sprintf(pContext.aLastResult,"OK|%d|%d|\0",pContext.aRealTime.aInLinePressure,pContext.aRealTime.aInLineFlow);
         }
         else {
-            sprintf(pContext.aLastResult,"ER|%d|%d|\0",pContext.aRealTime.aInLinePresure,pContext.aRealTime.aInLineFlow);
+            sprintf(pContext.aLastResult,"ER|%d|%d|\0",pContext.aRealTime.aInLinePressure,pContext.aRealTime.aInLineFlow);
         }
         
     } // _toUL

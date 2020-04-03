@@ -32,41 +32,27 @@ namespace Nihtiu {
     
     namespace _SettingType {
 
-        const SettingType InspiratoryFlowTime         =  0;
-        const SettingType InspiratoryPause            =  1;
-        const SettingType ExpiratoryFlowTime          =  2;
-        const SettingType ExpiratoryPause             =  3;
-        const SettingType InLinePresureGoal           =  4;
-        const SettingType InLineFlowGoal              =  5;
+        const SettingType InspiratoryFlowTime         =  0; // The time needed to breath
+        const SettingType InspiratoryPause            =  1; // The time the air must stay in the lungs
+        const SettingType ExpiratoryFlowTime          =  2; // The time needed to exhale
+        const SettingType ExpiratoryPause             =  3; // The time before breathing again
+        const SettingType InLinePressureGoal          =  4; // The IDEAL pressure level
+        const SettingType InLineFlowGoal              =  5; // The IDEAL flow (volume by time) level
         
-        const SettingType HighPressureThreshold       =  6; // setting : operational limit -> alarm
-        const SettingType LowPressureThreshold        =  7; // setting : operational limit -> alarm
+        const SettingType HighPressureThreshold       =  6; // Pressure above this limit trigger emergency alarm
+        const SettingType LowPressureThreshold        =  7; // Pressure below this limit trigger emergency alarm
+        const SettingType PressureWarningLevel        =  8; // The "warning" distance to arrive to the thresolds
 
-        const SettingType HoldTime                    =  8;
-        const SettingType BVMTestSpeed                =  9;
-        const SettingType BVMPressure                 = 10;
+        const SettingType HoldTime                    =  9; // Granularity for the hold button waiting time
+        const SettingType BVMTestSpeed                = 10; // How fast the BVM will be depleted without intervention
+        const SettingType BVMPressure                 = 11; // Pressure used to calibrate the BVM
 
-        const SettingType _MaxType                    = 11;
+        const SettingType _MaxType                    = 11; 
 
     } // _SettingType namespace
 
     using Settings = unsigned long[_SettingType::_MaxType];
 
-/*
- * Previously SettngType was a combined enumeration class including real time and flat elements.
- * 
- * That made things more complicated.  So the settings now are really fixed values that can be modified
- * by actions, but the other real-time elements must be controlled in a different way (this is not yet
- * finished).
- * 
-    enum class ParamType : byte {
-
-        InLinePresure               = 11, // realtime
-        InLineFlow                  = 12, // realtime
-        
-        ExhalationBlockerActivation = 13, // flag
-    }; 
-*/    
     enum class Problem : char{
         None      = 'N',
         Warning   = 'W',
@@ -75,7 +61,7 @@ namespace Nihtiu {
 
     struct RealTime {
       
-        unsigned long aInLinePresure;    
+        unsigned long aInLinePressure;    
         unsigned long aInLineFlow; 
         unsigned long aLastFinishedTime = millis();       
         ShortText     aLastProfile;
@@ -101,14 +87,17 @@ namespace Nihtiu {
         Text               aLastResult;
         RealTime           aRealTime;
         Settings           aSettings;
-        Actuators::Devices aActuators;
         Sensors::Devices   aSensors;
+        Actuators::Devices aActuators;
 
         unsigned long cycleTime() {
             return aSettings[_SettingType::InspiratoryFlowTime]+
                    aSettings[_SettingType::InspiratoryPause]+
                    aSettings[_SettingType::ExpiratoryFlowTime]+
                    aSettings[_SettingType::ExpiratoryPause];
+        }
+        Context() {
+            aActuators.aBVMController.setSensors(&aSensors);
         }
         
     }; // Context class

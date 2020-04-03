@@ -21,8 +21,14 @@ namespace Sensors {
     #define CTRL_RESET_DIGITAL_PIN  3 // use the right digital pin
 
     class Devices {
-        bool          readCtrlSignal(int);
+
+        float aPressureConversionRate;
+        float aFlowConversionRate;
+      
+        bool  readCtrlSignal(int);
     public:
+
+        Devices();
 
         unsigned long readPressureSensor(); 
         unsigned long readFlowSensor();
