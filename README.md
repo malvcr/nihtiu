@@ -1,79 +1,111 @@
-![Nihtiu Banner](https://github.com/malvcr/nihtiu/blob/master/docs/images/Nihtiu_Banner.jpg)
-<div style="text-align: right"><i>(air or wind on the Chorotega extinct language)</i></div>
+|
+|![Nihtiu Banner](/docs/images/Nihtiu_Banner.jpg)|
+|--------:|
+|*(air or wind in the extinct Chorotega language)*|
 
+# Nihtiu Environment
 
-The purpose of this project is to discuss and to provide/invent solutions to deal with the lack of equipment to work with the #Covid-19 #coronavirus.
+## The situation
 
-The idea has been taken from Johns Hopkins Emergency Medicine Resident Julian Botta (Twitter: @julianbotta) published document ["Specifications for simple open source mechanical ventilator"](https://docs.google.com/document/d/1FNPwrQjB1qW1330s5-S_-VB0vDHajMWKieJRjINCNeE/preview?fbclid=IwAR3ugu1SGMsacwKi6ycAKJFOMduInSO4WVM8rgmC4CgMJY6cKaGBNR14mpM), together with other technical and theoretical sources and some spice from the project creator.
+\#Covid19 is a disease caused by a \#coronavirus that appeared as an unexpected war, a situation that surprised everyone in late 2019. In a few months it has been able to decimate even the health systems of strong countries and is causing millions of sick people and thousands of deaths (with a really painful death).
 
-There are several alternatives to work the problems:
+At the time of this writing, we have to wait at least months (even around a year) to have a useful vaccine for the disease. Meanwhile, the only successful solution has been the so-called "social distancing", coupled with extreme measures of care and security when being in contact with others or leaving home in some type of forced quarantine at a country level. However, this is a very difficult situation to maintain that is destroying the world economy and will forever change the way our society works.
 
-* To design and to create new systems
-* To retrofit obsolete or damaged existing machines
-* To addapt existing equipment and/or parts to be used in the needed context
+Key aspects of what needs to be done to resolve the problem lay around medical breathing technology which involves:
 
-# A Botta System
+1. Patients, because in severe cases they need to be connected for weeks to special machines called "ventilators", which help them breathe. Many have died as there were not enough ventilators available when they reached that critical moment, and the hospital emergency rooms have not enough of them because in normal conditions is not necessary to use the resources purchasing so many expensive machines.  Also, there is a fierce battle in the open market for them and now the countries are forbidding to export any technology that could be used for Covid19 treatment, as it is needed locally everywhere. 
+       
+2. The economy, because when people are sick they cannot work and in order for healthy people to stay away from the disease, many have been confined far from their workplace. It is simply very dangerous to continue doing everything as usual and, with the lack of equipment in each country, the authorities chose to sacrifice the economy instead of the population.
 
-## General description
+There are also some features of the disease that have been discovered little by little, which paint a clearer picture of the situation:
 
-Botta describes a system whose control could be performed by Arduino or Raspberry Pi machines.
+* Some patients (the quantity is unknown right now because was not a priority to count them in the moment), have temporary or permanent damage in their lungs “after” being cataloged as cured.  There are cases where between 20 to 30% of their lung capacity have been lost1.
+* The disease is very contagious2.
+* Not only the ventilation devices are needed; in some countries, the quantity of doctors required to attend patients (and ultimately control the ventilators), is limited.  A reason for this to happen is that many of them are sick from the same disease they try to cure every day3, or simply they are exhaust or even near collapse because the overwhelming work needed to take care of the patients4.
 
-There is the main issue the machine must accomplish, although there seem to be more related problems.
+This means considering a different type of breathing technology that is more comprehensive than currently available, where a single doctor has the possibility of offering treatment to more people and even, from a safer place than constantly visiting them. Furthermore, being a new and relatively unknown disease, every piece of information about how patients pass through the disease is important in helping others heal. It might even be necessary to collect detailed information from various countries in real time to understand what is happening with the disease and each type of treatment.
+The Project
 
-* The lack of other medical material
-* Many patients and small quantity of exhausted medical staff
-* Physical space for patient accomodation
-* A very dangerous contagious environment
+## Nihtiu
 
-As the machines must be carefully tuned for each case, an knowledable person must check what is happening to re-tune the machine.  If the machine is an independent device, that must be done being there with the person.
+The project’s purpose is to describe distributed breathing technology for world-level war-like scenarios as the one the Covid-19 pandemic have defined.
 
-So, it seems more appropriate to network the machines and to have an isolated remote control center that could monitor what is happening with each machine and that can deliver the required commands to each one.
+As to create such type of technology is extremely demanding, following a standard working procedure would require many years of work that is not available at the moment.  For this reason, the project have been defined as a 100% open one using the flexible MIT licensing.
 
-Oh the other side, it is easier to create hardware and sensor control logic using Arduino level machines that Single Board Computers.  But Arduino logic for a networked environment could be very difficult to obtain.  
+During the creation process, all reference documents, source code, blueprints, designs, pitfall descriptions, successful decisions, recommendations, suggestions, etc., will be published, for them to be useful as raw material for other projects where this information could be relevant.
 
-A possible solution is to use both, an Arduino and a Raspberry Pi or similar machine connected through a USB cable.
+Also, the idea is to use cheap and easy to find parts for each system component.  Instead of having only one medical-level ventilator, to be able to create several networked ones.  BUT with state of the art and carefully crafted definitions and industrial level quality code.
 
-* The Arduino, ESP32 or similar device is the real heart of the system.  It has the machine logic, parameters, profiles, receives data from the sensors and manages the moving parts.
-* The SBC is the "Access Server", providing user interfacing, alarms and local telemetry data storage.
-* An analysis and backup system "could" (optionally) connect with the SBC to collect the working information to perform several types of analysis on the systems.  That connection could be performed wired or wirelessly as it is not critical fot the machine behaviour.
+## The Environment
 
-All the data visualization could be done with HTTP5 logic.  A first version can be done with PHP or similar type of language, while the Arduino logic be encoded with carefully written C++ code (medical level quality).
+Taking all this into consideration, the Nihtiu Environment is defined:
 
-This setup advantage is that the complexity can be limited to the particular scenario and that, in the case the networed environment fails, the Arduino machine can continue working as such embedded systems can work in isolation from the other computing elements.  This, together with some "emergency" setup for immediate usage.
+![Nihtiu Environment](/docs/images/Nihtiu-Environment.png)
 
-## Transactional based
+Here, there are ventilators, but they are networked and have centralized monitoring and control systems.  Also, there are portable breathing assistants, oriented to people with breathing problems but not critical enough to stay in the hospital.
 
-Although there are and will be attempts to create these systems as pure embedded ones, it seems better to work them as transactional based machines.
+And all them working as a whole, together with other medical equipment and data processing, to have a better understanding about what is really happening with the patient and the surrounding population.
 
-These, together with a standardized basic protocol could permit to "match" different independent attempts.  Some could work a better ventilator or similar, but other a better control system.  Some place could work with a Raspberry Pi but another one maybe have some spare old PCs that could be useful for that purpose.
+The specific components are:
 
-Even a equipment company could work the "difficult to make" parts but in quantity, letting the control area to other company or individuals.
+### Clinical Ventilators
 
-All them sending transactions through network to the particular machines.  A control system could work with one ventilator while another could manage one thousand.
+These are the known ventilation devices that are being used in the fight with the Covid-19 disease.  The main difference is that these machines, although can work autonomously, can also be part of a critical network.  A good reference about what these system need to accomplish have been provided by the UK Department of Health & Social Care1.
 
-*Note: WIFI was initially considered for the control network; however, concerns about wireless technology reliability is making this a secondary control channel, letting the main one as a pure wire connected one.  Anyway, always will be possible to link a SBC with an Ethernet port AND a WIFI link.  This is the main reason to have a mixed environment (Arduino+SBC), as the SBC can provide extra flexibility methods lething to the Arduino the precise hard work to keep the patient alive.*
+In the case of the Nihtiu derived ventilators, they must be designed to work seamlessly in a Nihtiu environment.  Other ventilators could need a computing powered interface (relay machine) to be integrated as being Nihtiu ventilators.
 
-# Why retrofiting equipment?
+### Portable Breathing Assistants
 
-This is important when some element in the setup is not easy to create.
+The PBA is a very small basic ventilation device that works connected to the wall electricity outlet and using batteries.  It is a Clinical Ventilator derived system having less mode operations and very simplified controls, designed for any non-technical and non-medical related person to work with.  But also, as the patient using it has reduced lung capacity, offers extra functionality, as a voice amplification or even a mobile talking complement.
 
-Existing machines that are no longer into production could be reassembled and, with some modifications, could provide the basic functions.
+The machine also have the capability to send telemetry data using cellular communication circuitry (phone derived), so even if it is being used outside the hospital, the doctors can continue monitoring what is happening with the patient while using the device.
 
-Also, they have "complex" parts that can be used to create a Botta System.
+The idea is to have a very cheap, light, reliable and small machine, and the basement to create this machine is the Nihtiu Clinical Ventilator.
 
-# Part adaptation
+### Data collector
 
-In this case, the system could use some already created parts, even replacement parts created to specific medical equipment.
+The data collector is an information system that receives data from multiple sources and organize it according with the patient identity.
 
-In all these cases the challenge is how to obtain a minimum usable working machine, not a full fleated deluxe system (this is a WAR ZONE where many characteristics must be avoided).
+### Possible sources are:
 
-# DIY sense
+* Clinical Ventilators
+* Portable Breathing Assistants
+* Data Processors
+* Other medical systems, as the ones collect DICOM images connected through PACS servers.
 
-This type of systems can't be designed for complex built scenarios as, in many cases, the sophisticated infrastructure doesn't exist.
+It also provides enough logic for a doctor, nurse or medical technician to monitor certain quantity of patients (locally or remotely located).
 
-This is why an Arduino or a Raspberry Pi are being discussed and not more complex control machines.  However, the software by itself could be complex, just that the software setup must be extremely easy to accomplish, as the people involved with the immediate patient treatment need the machines working quickly and have no time to read manuals.
+### Data processor
 
-# Related projects
+This is a pure data processing device (Big Data, AI, etc.), that obtains data from the Data collector, analyze it and return new information to the information system in the Data collector to identify different types of situations are not obvious when only checking the direct telemetry data.
+
+### Data visualization
+
+The client-usable part of the environment.  This is a set of screens, voice controlled elements, etc., that permits to the medical staff to interact with the Nihtiu Environment.
+
+Can be stationary stations, portable computing devices or even smartphones.
+
+## The initial system
+
+The initial work is to understand the problem and to define an initial ventilator system.
+
+This system is a multi-computing device created with Arduinos and Single Board Computers, together with a set of sensors and actuators (motors, screens, sound devices, etc.).
+
+As these are the basic elements, they are coded with enough care and clear enough terms for an information science professional to decode what is happening inside.  And the inner system behavior is like a transactional system instead of obscure and difficult to follow interleaved functionality.
+
+## Related projects and references
+
+[Botta: Specifications for a simple open source mechanical ventilator](https://docs.google.com/document/d/1FNPwrQjB1qW1330s5-S_-VB0vDHajMWKieJRjINCNeE/edit)
+
+[Rapidly manufactured ventilator system specification](https://www.gov.uk/government/publications/coronavirus-covid-19-ventilator-supply-specification/rapidly-manufactured-ventilator-system-specification)
+
+[Coronavirus: some recovered patients may have reduced lung function and are left gasping for air while walking briskly, Hong Kong doctors find](https://www.scmp.com/news/hong-kong/health-environment/article/3074988/coronavirus-some-recovered-patients-may-have)
+
+[How The Novel Coronavirus And The Flu Are Alike ... And Different](https://www.npr.org/sections/goatsandsoda/2020/03/20/815408287/how-the-novel-coronavirus-and-the-flu-are-alike-and-differen)
+
+[Coronavirus: One in four NHS doctors 'sick or in isolation'](https://news.sky.com/story/coronavirus-one-in-four-nhs-doctors-sick-or-in-isolation-11965886)
+
+[Doctors: COVID-19 pushing Italian ICUs toward collapse](https://www.cidrap.umn.edu/news-perspective/2020/03/doctors-covid-19-pushing-italian-icus-toward-collapse)
 
 [Code Live Ventilator Challenge](https://www.agorize.com/en/challenges/code-life-challenge)
 
@@ -86,3 +118,5 @@ This is why an Arduino or a Raspberry Pi are being discussed and not more comple
 [UCR:Respiradores de emergencia para pacientes de Covid 19 podrían ser de fácil construcción](https://www.ucr.ac.cr/noticias/2020/03/25/respiradores-de-emergencia-para-pacientes-de-covid-19-podrian-ser-de-facil-construccion.html)
 
 [TEC trabaja en la creación de respiradores artificiales](https://delfino.cr/2020/03/tec-trabaja-en-la-creacion-de-respiradores-artificiales)
+
+[How innovation is helping ease a dangerous ventilator shortage](https://www.weforum.org/agenda/2020/03/coronavirus-ventilators-covid19-healthcare/)
