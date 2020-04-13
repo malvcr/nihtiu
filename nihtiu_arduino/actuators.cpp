@@ -10,7 +10,6 @@
 #include "actuators.h"
 
 #include <Arduino.h>
-#include <Wire.h>
 
 namespace Actuators {
 
@@ -32,9 +31,7 @@ namespace Actuators {
           delete aStepperPtr;
           
       } // BagValveMask destructor
-
       
-
 
       void BagValveMask::setup(unsigned int pTestTime, unsigned int pPressure, unsigned int pBagVolume) {
 
@@ -91,53 +88,36 @@ namespace Actuators {
       // -------------
 
       Alarm::Alarm() {
-          Wire.begin();
+          aComm.send(CMD::SilentMsg,"Nihtiu 1.0","Activating");
       } // Alarm constructor
 
-
-      // The alarm will wait for a short flag specifying the type of
-      // operation to perform.  It can be:
-      //
-      // *W* : Warning
-      // *E* : Emergency
-      // *R* : Reset (turn off the alarm)
-      //
-      // If the operation is *W* or *E*, will wait for a short
-      // message (32 byte maximum), that will show in a LCD screen
-      // or similar device.
+      // The Alarm bassicaly communicates with the Alarm
+      // subSystem and sends it messaging transactions.
       //
 
-      void Alarm::warning(Text& pText) {
-
-          Wire.beginTransmission(AlarmSlaveAddress);
-          Wire.write("*W*");
-          Wire.endTransmission();
-          Wire.beginTransmission(AlarmSlaveAddress);
-          Wire.write(pText);
-          Wire.endTransmission();
-        
+      void Alarm::warning(char* pText) {
+          aComm.send(CMD::Warning,pText,nullptr);
       } // Alarm::warning
 
       
-      void Alarm::emergency(Text& pText) {
-
-          Wire.beginTransmission(AlarmSlaveAddress);
-          Wire.write("*E*");
-          Wire.endTransmission();
-          Wire.beginTransmission(AlarmSlaveAddress);
-          Wire.write(pText);
-          Wire.endTransmission();
-        
+      void Alarm::emergency(char* pText) {
+          aComm.send(CMD::Emergency,pText,nullptr);
       } // Alarm::emergency
 
       
       void Alarm::reset() {
-
-          Wire.beginTransmission(AlarmSlaveAddress);
-          Wire.write("*R*");
-          Wire.endTransmission();
-        
+          aComm.send(CMD::Off,nullptr,nullptr);
       } // Alarm::reset
 
-        
+
+      void Alarm::message  (char* pLine1, char* pLine2) {
+          aComm.send(CMD::Message,pLine1,pLine2);
+      } // Alarm::message
+
+      
+      void Alarm::silentMsg(char* pLine1, char* pLine2) {
+          aComm.send(CMD::SilentMsg,pLine1,pLine2);
+      } // Alarm::silentMsg
+
+      
 } // Actuators namespace

@@ -12,6 +12,7 @@
 
 #include "tools.h"
 #include "sensors.h"
+#include "comm.h"
 
 #include <Stepper.h>
 
@@ -27,19 +28,18 @@ namespace Actuators {
 
     #define StepsPerRevolution 2048
 
-    // The Alarm uses the I2C standard pin layout, but this is only
-    // a physical concern, as this is already encoded in the Wire
-    // library.
+    // Originally the Alarm was supposed to be connected with the
+    // I2C communication ports.  However, it is better to use the
+    // extra serial ports the Mega have for such purpose and the
+    // independent Alarm system (based on an Arduino Nano), have
+    // been created around that port.
     //
-    // For reference:
+    // Buth, the nihtiu_arduino and the nihtiu_alarm systems share
+    // the comm.h and comm.cpp for such reason.  They will become
+    // a formal Arduino library in the future.
     //
-    // SDA : Data Line
-    // SCL : Clock Line
-    //
-    // Mega2560   20 (SDA), 21 (SCL)
-    // Uno        A4 (SDA), A5 (SCL)
-    // Nano       A4 (SDA), A5 (SCL)
-    //
+    // Then, the I2C will not be used with the Actuators, but only 
+    // with those sensors are required to communicate using it.
     //
     
     #define AlarmSlaveAddress 1
@@ -93,12 +93,17 @@ namespace Actuators {
 
     class Alarm {
 
+        AlarmNode::Comm aComm;
+
     public:
 
         Alarm();
     
-        void warning  (Text& pText);
-        void emergency(Text& pText);
+        void warning  (char* pText);
+        void emergency(char* pText);
+        void message  (char* pLine1, char* pLine2);
+        void silentMsg(char* pLine1, char* pLine2);
+        
         void reset();
       
     }; // Alarm class
