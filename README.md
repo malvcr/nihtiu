@@ -1,5 +1,6 @@
-# nihtiu
-*(air or wind on the Chorotega extinct language)*
+![Nihtiu Banner](https://github.com/malvcr/nihtiu/blob/master/docs/images/Nihtiu_Banner.jpg)
+<div style="text-align: right"><i>(air or wind on the Chorotega extinct language)</i></div>
+
 
 The purpose of this project is to discuss and to provide/invent solutions to deal with the lack of equipment to work with the #Covid-19 #coronavirus.
 
