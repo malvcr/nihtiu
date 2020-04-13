@@ -1,4 +1,3 @@
-|
 |![Nihtiu Banner](/docs/images/Nihtiu_Banner.jpg)|
 |--------:|
 |*(air or wind in the extinct Chorotega language)*|
