@@ -47,7 +47,9 @@ namespace Nihtiu {
         const SettingType BVMTestSpeed                = 10; // How fast the BVM will be depleted without intervention
         const SettingType BVMPressure                 = 11; // Pressure used to calibrate the BVM
 
-        const SettingType _MaxType                    = 11; 
+        const SettingType BatteryEmergencyThreshold   = 12; // Maximum quantity of times to consider battery usage a warning
+
+        const SettingType _MaxType                    = 12; 
 
     } // _SettingType namespace
 
@@ -68,6 +70,11 @@ namespace Nihtiu {
 
         Problem       aTriggeredProblem = Problem::None;
         Text          aProblemDesc;
+
+        /**
+         * How many cycles have been used with the battery power only?
+         */
+        int           aBatteryEmergencyCycled = 0;
 
         unsigned long elapsedTime() {
             // about "millis rollover" issue : https://forum.arduino.cc/index.php/topic,42997.0.html

@@ -30,6 +30,7 @@ namespace Nihtiu {
          * Indicates if the reset line is active (and cleans it for further checing).
          */
         bool flag_resetted();
+        bool flag_onBattery();
 
 
     public:
