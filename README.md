@@ -121,3 +121,5 @@ As these are the basic elements, they are coded with enough care and clear enoug
 [TEC trabaja en la creación de respiradores artificiales](https://delfino.cr/2020/03/tec-trabaja-en-la-creacion-de-respiradores-artificiales)
 
 [How innovation is helping ease a dangerous ventilator shortage](https://www.weforum.org/agenda/2020/03/coronavirus-ventilators-covid19-healthcare/)
+
+[Ventilators Aren’t Going to Cure COVID-19. Here’s What They Can Do.](https://www.propublica.org/article/ventilators-arent-going-to-cure-covid-19-heres-what-they-can-do)
