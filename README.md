@@ -18,14 +18,13 @@ Key aspects of what needs to be done to resolve the problem lay around medical b
 
 There are also some features of the disease that have been discovered little by little, which paint a clearer picture of the situation:
 
-* Some patients (the quantity is unknown right now because was not a priority to count them in the moment), have temporary or permanent damage in their lungs “after” being cataloged as cured.  There are cases where between 20 to 30% of their lung capacity have been lost1.
-* The disease is very contagious2.
-* Not only the ventilation devices are needed; in some countries, the quantity of doctors required to attend patients (and ultimately control the ventilators), is limited.  A reason for this to happen is that many of them are sick from the same disease they try to cure every day3, or simply they are exhaust or even near collapse because the overwhelming work needed to take care of the patients4.
+* Some patients (the quantity is unknown right now because was not a priority to count them in the moment), have temporary or permanent damage in their lungs “after” being cataloged as cured.  There are cases where between 20 to 30% of their lung capacity have been lost [r2].
+* The disease is very contagious [r3].
+* Not only the ventilation devices are needed; in some countries, the quantity of doctors required to attend patients (and ultimately control the ventilators), is limited.  A reason for this to happen is that many of them are sick from the same disease they try to cure every day [r4], or simply they are exhaust or even near collapse because the overwhelming work needed to take care of the patients [r5].
 
 This means considering a different type of breathing technology that is more comprehensive than currently available, where a single doctor has the possibility of offering treatment to more people and even, from a safer place than constantly visiting them. Furthermore, being a new and relatively unknown disease, every piece of information about how patients pass through the disease is important in helping others heal. It might even be necessary to collect detailed information from various countries in real time to understand what is happening with the disease and each type of treatment.
-The Project
 
-## Nihtiu
+## The Project: Nihtiu
 
 The project’s purpose is to describe distributed breathing technology for world-level war-like scenarios as the one the Covid-19 pandemic have defined.
 
@@ -49,7 +48,7 @@ The specific components are:
 
 ### Clinical Ventilators
 
-These are the known ventilation devices that are being used in the fight with the Covid-19 disease.  The main difference is that these machines, although can work autonomously, can also be part of a critical network.  A good reference about what these system need to accomplish have been provided by the UK Department of Health & Social Care1.
+These are the known ventilation devices that are being used in the fight with the Covid-19 disease.  The main difference is that these machines, although can work autonomously, can also be part of a critical network.  A good reference about what these system need to accomplish have been provided by the UK Department of Health & Social Care [r1].
 
 In the case of the Nihtiu derived ventilators, they must be designed to work seamlessly in a Nihtiu environment.  Other ventilators could need a computing powered interface (relay machine) to be integrated as being Nihtiu ventilators.
 
@@ -92,34 +91,36 @@ This system is a multi-computing device created with Arduinos and Single Board C
 
 As these are the basic elements, they are coded with enough care and clear enough terms for an information science professional to decode what is happening inside.  And the inner system behavior is like a transactional system instead of obscure and difficult to follow interleaved functionality.
 
-## Related projects and references
+## Related projects
 
-[Botta: Specifications for a simple open source mechanical ventilator](https://docs.google.com/document/d/1FNPwrQjB1qW1330s5-S_-VB0vDHajMWKieJRjINCNeE/edit)
+[[p1]- Botta: Specifications for a simple open source mechanical ventilator](https://docs.google.com/document/d/1FNPwrQjB1qW1330s5-S_-VB0vDHajMWKieJRjINCNeE/edit)
 
-[Brigham and Women's Hospital COVID-19 Clinical Guidelines](https://covidprotocols.org/)
+[[p2]- Rapidly manufactured ventilator system specification](https://www.gov.uk/government/publications/coronavirus-covid-19-ventilator-supply-specification/rapidly-manufactured-ventilator-system-specification)
 
-[Rapidly manufactured ventilator system specification](https://www.gov.uk/government/publications/coronavirus-covid-19-ventilator-supply-specification/rapidly-manufactured-ventilator-system-specification)
+[[p3]- Code Live Ventilator Challenge](https://www.agorize.com/en/challenges/code-life-challenge)
 
-[Coronavirus: some recovered patients may have reduced lung function and are left gasping for air while walking briskly, Hong Kong doctors find](https://www.scmp.com/news/hong-kong/health-environment/article/3074988/coronavirus-some-recovered-patients-may-have)
+[[p4]- 7 open hardware projects working to solve COVID-19](https://opensource.com/article/20/3/open-hardware-covid19)
 
-[How The Novel Coronavirus And The Flu Are Alike ... And Different](https://www.npr.org/sections/goatsandsoda/2020/03/20/815408287/how-the-novel-coronavirus-and-the-flu-are-alike-and-differen)
+[[p5]- IFIXIT: Help us crowdsource repair information for medical equipment](https://www.ifixit.com/News/36354/help-us-crowdsource-repair-information-for-Hospital-Equipment)
 
-[Coronavirus: One in four NHS doctors 'sick or in isolation'](https://news.sky.com/story/coronavirus-one-in-four-nhs-doctors-sick-or-in-isolation-11965886)
+[[p6]- OXYGEN](https://www.oxygen.protofy.xyz/)
 
-[Doctors: COVID-19 pushing Italian ICUs toward collapse](https://www.cidrap.umn.edu/news-perspective/2020/03/doctors-covid-19-pushing-italian-icus-toward-collapse)
+[[p7]- UCR:Respiradores de emergencia para pacientes de Covid 19 podrían ser de fácil construcción](https://www.ucr.ac.cr/noticias/2020/03/25/respiradores-de-emergencia-para-pacientes-de-covid-19-podrian-ser-de-facil-construccion.html)
 
-[Code Live Ventilator Challenge](https://www.agorize.com/en/challenges/code-life-challenge)
+[[p8]- TEC trabaja en la creación de respiradores artificiales](https://delfino.cr/2020/03/tec-trabaja-en-la-creacion-de-respiradores-artificiales)
 
-[7 open hardware projects working to solve COVID-19](https://opensource.com/article/20/3/open-hardware-covid19)
+[[p9]- How innovation is helping ease a dangerous ventilator shortage](https://www.weforum.org/agenda/2020/03/coronavirus-ventilators-covid19-healthcare/)
 
-[IFIXIT: Help us crowdsource repair information for medical equipment](https://www.ifixit.com/News/36354/help-us-crowdsource-repair-information-for-Hospital-Equipment)
+## References
 
-[OXYGEN](https://www.oxygen.protofy.xyz/)
+[[r1]- Brigham and Women's Hospital COVID-19 Clinical Guidelines](https://covidprotocols.org/)
 
-[UCR:Respiradores de emergencia para pacientes de Covid 19 podrían ser de fácil construcción](https://www.ucr.ac.cr/noticias/2020/03/25/respiradores-de-emergencia-para-pacientes-de-covid-19-podrian-ser-de-facil-construccion.html)
+[[r2]- Coronavirus: some recovered patients may have reduced lung function and are left gasping for air while walking briskly, Hong Kong doctors find](https://www.scmp.com/news/hong-kong/health-environment/article/3074988/coronavirus-some-recovered-patients-may-have)
 
-[TEC trabaja en la creación de respiradores artificiales](https://delfino.cr/2020/03/tec-trabaja-en-la-creacion-de-respiradores-artificiales)
+[[r3]- How The Novel Coronavirus And The Flu Are Alike ... And Different](https://www.npr.org/sections/goatsandsoda/2020/03/20/815408287/how-the-novel-coronavirus-and-the-flu-are-alike-and-differen)
 
-[How innovation is helping ease a dangerous ventilator shortage](https://www.weforum.org/agenda/2020/03/coronavirus-ventilators-covid19-healthcare/)
+[[r4]- Coronavirus: One in four NHS doctors 'sick or in isolation'](https://news.sky.com/story/coronavirus-one-in-four-nhs-doctors-sick-or-in-isolation-11965886)
 
-[Ventilators Aren’t Going to Cure COVID-19. Here’s What They Can Do.](https://www.propublica.org/article/ventilators-arent-going-to-cure-covid-19-heres-what-they-can-do)
+[[r5]- Doctors: COVID-19 pushing Italian ICUs toward collapse](https://www.cidrap.umn.edu/news-perspective/2020/03/doctors-covid-19-pushing-italian-icus-toward-collapse)
+
+[[r6]- Ventilators Aren’t Going to Cure COVID-19. Here’s What They Can Do.](https://www.propublica.org/article/ventilators-arent-going-to-cure-covid-19-heres-what-they-can-do)
