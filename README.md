@@ -134,4 +134,4 @@ As these are the basic elements, they are coded with enough care and clear enoug
 
 [[r7]- Respiratory Support in Novel Coronavirus Disease (COVID-19) Patients, with a Focus on Resource-Limited Settings](https://www.ajtmh.org/content/journals/10.4269/ajtmh.20-0283)
 
-[[r7]]- Why Some Doctors Are Now Moving Away From Ventilator Treatments for Coronavirus Patients (https://time.com/5818547/ventilators-coronavirus/)
+[[r8]]- Why Some Doctors Are Now Moving Away From Ventilator Treatments for Coronavirus Patients (https://time.com/5818547/ventilators-coronavirus/)
