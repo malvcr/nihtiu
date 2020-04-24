@@ -52,6 +52,8 @@ These are the known ventilation devices that are being used in the fight with th
 
 In the case of the Nihtiu derived ventilators, they must be designed to work seamlessly in a Nihtiu environment.  Other ventilators could need a computing powered interface (relay machine) to be integrated as being Nihtiu ventilators.
 
+Some sources describe that a better option is a BiPAP, as the pressure it produce helps to clean the alveolus in the lungs.  However, a concern is about the virus spreading around as they are not invasive machines (they work with masks).  And more recent results sugest that the invasive machines could produce more damage to the respiratory system that the non invasive ones. So, to produce the right type of mask could be really important in this context. [r6] [r7]
+
 ### Portable Breathing Assistants
 
 The PBA is a very small basic ventilation device that works connected to the wall electricity outlet and using batteries.  It is a Clinical Ventilator derived system having less mode operations and very simplified controls, designed for any non-technical and non-medical related person to work with.  But also, as the patient using it has reduced lung capacity, offers extra functionality, as a voice amplification or even a mobile talking complement.
@@ -59,6 +61,9 @@ The PBA is a very small basic ventilation device that works connected to the wal
 The machine also have the capability to send telemetry data using cellular communication circuitry (phone derived), so even if it is being used outside the hospital, the doctors can continue monitoring what is happening with the patient while using the device.
 
 The idea is to have a very cheap, light, reliable and small machine, and the basement to create this machine is the Nihtiu Clinical Ventilator.
+
+*Notice that a PBA could have some resemblance with CPAP equipment, but must be smaller and really portable, more similar to a small light backpack or a purse.*
+
 
 ### Data collector
 
