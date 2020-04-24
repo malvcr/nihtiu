@@ -69,6 +69,8 @@ The idea is to have a very cheap, light, reliable and small machine, and the bas
 
 The data collector is an information system that receives data from multiple sources and organize it according with the patient identity.
 
+Then, this component must have a database and one or more information systems feeding and providing maintenance to such data repository.
+
 ### Possible sources are:
 
 * Clinical Ventilators
