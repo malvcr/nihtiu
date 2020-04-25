@@ -4,6 +4,8 @@
 
 # Nihtiu Environment
 
+*-- check the Wiki part ... it has important discussions --*
+
 ## The situation
 
 \#Covid19 is a disease caused by a \#coronavirus that appeared as an unexpected war, a situation that surprised everyone in late 2019. In a few months it has been able to decimate even the health systems of strong countries and is causing millions of sick people and thousands of deaths (with a really painful death).
