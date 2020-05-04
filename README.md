@@ -124,9 +124,11 @@ As these are the basic elements, they are coded with enough care and clear enoug
 
 [[p9]- Open Source Ventilator](https://opensourceventilator.ie/)
 
-[[p9]- How innovation is helping ease a dangerous ventilator shortage](https://www.weforum.org/agenda/2020/03/coronavirus-ventilators-covid19-healthcare/)
+[[p10]- How innovation is helping ease a dangerous ventilator shortage](https://www.weforum.org/agenda/2020/03/coronavirus-ventilators-covid19-healthcare/)
 
-[[p10]- Nvidia’s top scientist develops open-source ventilator that can be built with $400 in readily available parts](https://techcrunch.com/2020/05/01/nvidias-top-scientist-develops-open-source-ventilator-that-can-be-built-with-400-in-readily-available-parts/)
+[[p11]- Nvidia’s top scientist develops open-source ventilator that can be built with $400 in readily available parts](https://techcrunch.com/2020/05/01/nvidias-top-scientist-develops-open-source-ventilator-that-can-be-built-with-400-in-readily-available-parts/)
+
+[[p12]- NASA-Developed Ventilator Authorized by FDA for Emergency Use](https://www.nasa.gov/press-release/nasa-developed-ventilator-authorized-by-fda-for-emergency-use)
 
 ## References
 
