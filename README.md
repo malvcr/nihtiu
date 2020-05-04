@@ -100,7 +100,11 @@ This system is a multi-computing device created with Arduinos and Single Board C
 
 As these are the basic elements, they are coded with enough care and clear enough terms for an information science professional to decode what is happening inside.  And the inner system behavior is like a transactional system instead of obscure and difficult to follow interleaved functionality.
 
-## Related projects
+## Additional (project related) publications
+
+[[x1]- Ventilators in Covid-19 times](https://medium.com/@malvcr/ventilators-in-covid-19-times-f570ae2bcc64?source=friends_link&sk=d4f600e13792742de84ac8dbd94e4145)
+
+## Same theme projects
 
 [[p1]- Botta: Specifications for a simple open source mechanical ventilator](https://docs.google.com/document/d/1FNPwrQjB1qW1330s5-S_-VB0vDHajMWKieJRjINCNeE/edit)
 
@@ -118,7 +122,11 @@ As these are the basic elements, they are coded with enough care and clear enoug
 
 [[p8]- TEC trabaja en la creación de respiradores artificiales](https://delfino.cr/2020/03/tec-trabaja-en-la-creacion-de-respiradores-artificiales)
 
+[[p9]- Open Source Ventilator](https://opensourceventilator.ie/)
+
 [[p9]- How innovation is helping ease a dangerous ventilator shortage](https://www.weforum.org/agenda/2020/03/coronavirus-ventilators-covid19-healthcare/)
+
+[[p10]- Nvidia’s top scientist develops open-source ventilator that can be built with $400 in readily available parts](https://techcrunch.com/2020/05/01/nvidias-top-scientist-develops-open-source-ventilator-that-can-be-built-with-400-in-readily-available-parts/)
 
 ## References
 
@@ -137,3 +145,13 @@ As these are the basic elements, they are coded with enough care and clear enoug
 [[r7]- Respiratory Support in Novel Coronavirus Disease (COVID-19) Patients, with a Focus on Resource-Limited Settings](https://www.ajtmh.org/content/journals/10.4269/ajtmh.20-0283)
 
 [[r8]- Why Some Doctors Are Now Moving Away From Ventilator Treatments for Coronavirus Patients](https://time.com/5818547/ventilators-coronavirus/)
+
+[[r9]- Reducing Care Fragmentation](http://www.improvingchroniccare.org/downloads/reducing_care_fragmentation.pdf)
+
+[[r10]- Networked medical device cybersecurity and patient safety:  Perspectives of health care information cybersecurity executives](https://www2.deloitte.com/content/dam/Deloitte/us/Documents/life-sciences-health-care/us-lhsc-networked-medical-device.pdf)
+
+[[r11]- IoT Platform for Healthcare System: Protocols Interoperability](https://www.ripublication.com/ijaer17/ijaerv12n22_106.pdf)
+
+[[r12]- IoT Protocols for Health Care Systems: A Comparative Study](https://www.researchgate.net/publication/328967304_IoT_Protocols_for_Health_Care_Systems_A_Comparative_Study)
+
+[[r13]- The Difference Between CPAP, BiPAP, and Ventilators](https://aeroflowinc.com/need-ventilator-instead-bipap-cpap/)
