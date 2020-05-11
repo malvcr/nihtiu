@@ -72,7 +72,7 @@ The Nihtiu environment is assembled with the most basic functional element: the 
 
 ![Nihtiu Environment](/docs/images/Nihtiu-Modular.png)
 
-**Breathing Unit** 
+ **Breathing Unit** 
 
 The Breathing Unit is a self contained tiny breathing device.
 
@@ -80,7 +80,7 @@ It is a "small enough" machine containing all the required components to help a 
 
 Has enough power to work independently for some minutes.
 
-**The stations**
+ **The stations**
 
 ![Nihtiu Scenarios](/docs/images/Nihtiu-Scenarios.png)
 
@@ -94,7 +94,7 @@ They are a "docking" platform where a Breathing Unit is docked, providing "extra
 
 * *Hospital Control Station*: The one permits to re-code the Breathing Unit to perform the customized operation modes, according with a doctor's specification.
 
-**Node Controller*
+ **Node Controller**
 
 This is an *aggregation* device having enough functionality to offer the central perspective of the distributed environment.  It could also cooperate with othher Node Controllers, to have a higher grade image about what is happening with the individual patients and how they related one with the other.
 
