@@ -6,23 +6,41 @@
 
 *-- check the Wiki part ... it has important discussions --*
 
+> This project evolves quickly, the same as the knowledge about the Covid-19 disease that motivated it. 
+------
+> Marco Alvarado  
+
 ## The situation
 
-\#Covid19 is a disease caused by a \#coronavirus that appeared as an unexpected war, a situation that surprised everyone in late 2019. In a few months it has been able to decimate even the health systems of strong countries and is causing millions of sick people and thousands of deaths (with a really painful death).
+\#Covid19 is a disease caused by a \#coronavirus that appeared as an unexpected war, a situation that surprised everyone in late 2019. In a few months it has been able to decimate even the health systems of strong countries and is causing millions of sick people and thousands of deaths (with a really painful death).  A situation that it is not improving as we like.
 
-At the time of this writing, we have to wait at least months (even around a year) to have a useful vaccine for the disease. Meanwhile, the only successful solution has been the so-called "social distancing", coupled with extreme measures of care and security when being in contact with others or leaving home in some type of forced quarantine at a country level. However, this is a very difficult situation to maintain that is destroying the world economy and will forever change the way our society works.
+At the time of this writing, we have to wait at least months (even around two years) to have a useful vaccine for the disease. Meanwhile, the only successful solution has been the so-called "social distancing", coupled with extreme measures of care and security when being in contact with others or leaving home in some type of forced quarantine at a country level. However, this is a very difficult situation to maintain that is destroying the world economy and will forever change the way our society works.
 
 Key aspects of what needs to be done to resolve the problem lay around medical breathing technology which involves:
 
-1. Patients, because in severe cases they need to be connected for weeks to special machines called "ventilators", which help them breathe. Many have died as there were not enough ventilators available when they reached that critical moment, and the hospital emergency rooms have not enough of them because in normal conditions is not necessary to use the resources purchasing so many expensive machines.  Also, there is a fierce battle in the open market for them and now the countries are forbidding to export any technology that could be used for Covid19 treatment, as it is needed locally everywhere. 
+### Patients:
+
+1. Covid-19 is a very contagious disease. [r3].
+
+2. In severe cases, the patients need to be connected for weeks to special machines called "ventilators", which help them breathe. Many have died as there were not enough ventilators available when they reached that critical moment, and the hospital Intensive Care Units (ICU) have not enough of them because in normal conditions it is not necessary to use the resources purchasing so many expensive machines.  
+
+3. Not only the ventilation devices are needed; in some countries, the quantity of doctors required to attend patients (and ultimately control the ventilators), is limited.  A reason for this to happen is that many of them are sick from the same disease they try to cure every day [r4], or simply they are exhaust or even near collapse because the overwhelming work needed to take care of the patients [r5].
+
+4. There is a fierce battle in the open market for ventilators, and several countries that make them are forbidding to export any technology that could be used for Covid19 treatment, as it is needed locally.
+
+5. The "standard" ventilator and related machines, although being the only options available to save some people, are far from being the perfect tools to offer treatment for Covid-19.  There are several shortcomings on the existing technology that must be addressed to offer better results.
+
+6. Some patients (the quantity is unknown right now because was not a priority to count them in the moment), have temporary or permanent damage in their lungs “after” being cataloged as cured.  There are cases where between 20 to 30% of their lung capacity have been lost [r2].
+
+
+### The Economy
        
-2. The economy, because when people are sick they cannot work and in order for healthy people to stay away from the disease, many have been confined far from their workplace. It is simply very dangerous to continue doing everything as usual and, with the lack of equipment in each country, the authorities chose to sacrifice the economy instead of the population.
+1. When people are sick they cannot work and in order for healthy people to stay away from the disease, many have been confined far from their workplace. 
 
-There are also some features of the disease that have been discovered little by little, which paint a clearer picture of the situation:
+2. It is simply very dangerous to continue doing everything as usual and as the ventilators are scarse, the authorities chose to sacrifice the economy instead of the population.
 
-* Some patients (the quantity is unknown right now because was not a priority to count them in the moment), have temporary or permanent damage in their lungs “after” being cataloged as cured.  There are cases where between 20 to 30% of their lung capacity have been lost [r2].
-* The disease is very contagious [r3].
-* Not only the ventilation devices are needed; in some countries, the quantity of doctors required to attend patients (and ultimately control the ventilators), is limited.  A reason for this to happen is that many of them are sick from the same disease they try to cure every day [r4], or simply they are exhaust or even near collapse because the overwhelming work needed to take care of the patients [r5].
+3. For some recovered people, it is complicated to return to a "normal life", hurting the already weak working environment.
+
 
 This means considering a different type of breathing technology that is more comprehensive than currently available, where a single doctor has the possibility of offering treatment to more people and even, from a safer place than constantly visiting them. Furthermore, being a new and relatively unknown disease, every piece of information about how patients pass through the disease is important in helping others heal. It might even be necessary to collect detailed information from various countries in real time to understand what is happening with the disease and each type of treatment.
 
@@ -30,73 +48,75 @@ This means considering a different type of breathing technology that is more com
 
 The project’s purpose is to describe distributed breathing technology for world-level war-like scenarios as the one the Covid-19 pandemic have defined.
 
-As to create such type of technology is extremely demanding, following a standard working procedure would require many years of work that is not available at the moment.  For this reason, the project have been defined as a 100% open one using the flexible MIT licensing.
+Why distributed and why this is not just a ventilator?
 
-During the creation process, all reference documents, source code, blueprints, designs, pitfall descriptions, successful decisions, recommendations, suggestions, etc., will be published, for them to be useful as raw material for other projects where this information could be relevant.
+* As previously described, ventilators are no perfect and the needs go beyond what an independent ventilator can do.
 
-Also, the idea is to use cheap and easy to find parts for each system component.  Instead of having only one medical-level ventilator, to be able to create several networked ones.  BUT with state of the art and carefully crafted definitions and industrial level quality code.
+* Not every country has the same resources.  The definition must be generic and flexible and the investment must be effective and intelligent.
 
-## The Environment
+* It is important to separate what must be discarted than what can be reused many times, to improve the investment to the maximum.  So, what be done must be a "components based" product.
+
+* Things must be practical, clear and clean to use always, and easy to fix.
+
+* Today a solution could be good but as more information is acquired about the disease, could require improvements or complete rewritings.  Each element must be able to be used in different situations.
+
+* Easy to use for the most of the people in the right scenarios.
+
+* The final product must be working as a huge bee hive.  Every part can work independently but as a whole they must show incredible power.
+
+* Licensing must be flexible.  Right now all these things are created under the MIT licensing umbrella, but if there are better options, they will applied when needed.
+
+### The Environment
+
+The Nihtiu environment is assembled with the most basic functional element: the **Breathing Unit**, that helps to compose a full set of functionality when aggregated with special docking **stations**.
+
+![Nihtiu Environment](/docs/images/Nihtiu-Modular.png)
+
+**Breathing Unit** 
+
+The Breathing Unit is a self contained tiny breathing device.
+
+It is a "small enough" machine containing all the required components to help a person to breathe, following a customized ventilation mode (designed exclusively for that person).
+
+Has enough power to work independently for some minutes.
+
+**The stations**
+
+![Nihtiu Scenarios](/docs/images/Nihtiu-Scenarios.png)
+
+They are a "docking" platform where a Breathing Unit is docked, providing "extra" functions to it.  There are different types of stations depending on the usage:
+
+* *Portability Station*: A type of case offering extra power and communications for the patient to carry the Breathing Unit, making it a real portable device.
+
+* *Home Base Station*: Provides convenient capacities for using the Breathing Unit at home for extended periods of time.
+
+* *Hospital Base Station*: Used when the patient lays in the Intensive Care Unit at a hospital or similar institution.
+
+* *Hospital Control Station*: The one permits to re-code the Breathing Unit to perform the customized operation modes, according with a doctor's specification.
+
+**Node Controller*
+
+This is an *aggregation* device having enough functionality to offer the central perspective of the distributed environment.  It could also cooperate with othher Node Controllers, to have a higher grade image about what is happening with the individual patients and how they related one with the other.
+
+These Nodes can also cooperate with Data processors, offering extra funcionality as transactional based service providers, and communicate with those machines in the wild through Telemetry concentrators.
 
 Taking all this into consideration, the Nihtiu Environment is defined:
 
 ![Nihtiu Environment](/docs/images/Nihtiu-Environment.png)
 
-Here, there are ventilators, but they are networked and have centralized monitoring and control systems.  Also, there are portable breathing assistants, oriented to people with breathing problems but not critical enough to stay in the hospital.
+Here, there are ventilators, but they are networked and have centralized monitoring and control systems.  The different *stations* provide all the required use cases, for the patients to stay at the hospital when required or to be able to go home "with" a breathing assistant to continue having a life.
 
-And all them working as a whole, together with other medical equipment and data processing, to have a better understanding about what is really happening with the patient and the surrounding population.
-
-The specific components are:
-
-### Clinical Ventilators
-
-These are the known ventilation devices that are being used in the fight with the Covid-19 disease.  The main difference is that these machines, although can work autonomously, can also be part of a critical network.  A good reference about what these system need to accomplish have been provided by the UK Department of Health & Social Care [r1].
-
-In the case of the Nihtiu derived ventilators, they must be designed to work seamlessly in a Nihtiu environment.  Other ventilators could need a computing powered interface (relay machine) to be integrated as being Nihtiu ventilators.
-
-Some sources describe that a better option is a BiPAP, as the pressure it produce helps to clean the alveolus in the lungs.  However, a concern is about the virus spreading around as they are not invasive machines (they work with masks).  And more recent results sugest that the invasive machines could produce more damage to the respiratory system that the non invasive ones. So, to produce the right type of mask could be really important in this context. [r6] [r7]
-
-### Portable Breathing Assistants
-
-The PBA is a very small basic ventilation device that works connected to the wall electricity outlet and using batteries.  It is a Clinical Ventilator derived system having less mode operations and very simplified controls, designed for any non-technical and non-medical related person to work with.  But also, as the patient using it has reduced lung capacity, offers extra functionality, as a voice amplification or even a mobile talking complement.
-
-The machine also have the capability to send telemetry data using cellular communication circuitry (phone derived), so even if it is being used outside the hospital, the doctors can continue monitoring what is happening with the patient while using the device.
-
-The idea is to have a very cheap, light, reliable and small machine, and the basement to create this machine is the Nihtiu Clinical Ventilator.
-
-*Notice that a PBA could have some resemblance with CPAP equipment, but must be smaller and really portable, more similar to a small light backpack or a purse.*
+Notice that the Home environment could also be defined in a contaminated zone.  This is following the successful method used in Costa Rica, where the patients stay in their homes and medical staff visit them regularly, reducing the need to compromise hospitals and clinics.  Only severe cases are worked within the ICUs.
 
 
-### Data collector
+The environment also can be enriched with extra medical equipment and data processing, to have a better understanding about what is really happening with the patient and the surrounding population.  This includes a complete information system (with the corresponding data model), and communication protocols correctly defined with high grade security.
 
-The data collector is an information system that receives data from multiple sources and organize it according with the patient identity.
-
-Then, this component must have a database and one or more information systems feeding and providing maintenance to such data repository.
-
-### Possible sources are:
-
-* Clinical Ventilators
-* Portable Breathing Assistants
-* Data Processors
-* Other medical systems, as the ones collect DICOM images connected through PACS servers.
-
-It also provides enough logic for a doctor, nurse or medical technician to monitor certain quantity of patients (locally or remotely located).
-
-### Data processor
-
-This is a pure data processing device (Big Data, AI, etc.), that obtains data from the Data collector, analyze it and return new information to the information system in the Data collector to identify different types of situations are not obvious when only checking the direct telemetry data.
-
-### Data visualization
-
-The client-usable part of the environment.  This is a set of screens, voice controlled elements, etc., that permits to the medical staff to interact with the Nihtiu Environment.
-
-Can be stationary stations, portable computing devices or even smartphones.
 
 ## The initial system
 
 The initial work is to understand the problem and to define an initial ventilator system.
 
-This system is a multi-computing device created with Arduinos and Single Board Computers, together with a set of sensors and actuators (motors, screens, sound devices, etc.).
+This system is a multi-computing device created with Arduinos and Single Board Computers, together with a set of sensors and actuators (motors, screens, sound devices, etc.).  The databases are sqlite embedded instances but with full relationship definitions between all the contained elements.
 
 As these are the basic elements, they are coded with enough care and clear enough terms for an information science professional to decode what is happening inside.  And the inner system behavior is like a transactional system instead of obscure and difficult to follow interleaved functionality.
 
