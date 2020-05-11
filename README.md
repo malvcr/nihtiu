@@ -96,7 +96,7 @@ They are a "docking" platform where a Breathing Unit is docked, providing "extra
 
  **Node Controller**
 
-This is an *aggregation* device having enough functionality to offer the central perspective of the distributed environment.  It could also cooperate with othher Node Controllers, to have a higher grade image about what is happening with the individual patients and how they related one with the other.
+This is an *aggregation* device having enough functionality to offer the central perspective of the distributed environment.  It could also cooperate with other Node Controllers, to have a higher grade image about what is happening with the individual patients and how they related one with the other.
 
 These Nodes can also cooperate with Data processors, offering extra funcionality as transactional based service providers, and communicate with those machines in the wild through Telemetry concentrators.
 
